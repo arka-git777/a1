@@ -59,6 +59,7 @@
             label1.TabIndex = 1;
             label1.Text = "Enter your asnwer:";
             label1.Click += label1_Click;
+            label1.MouseMove += label1_MouseMove;
             // 
             // answer_box
             // 
@@ -71,7 +72,7 @@
             // 
             question_label.AutoSize = true;
             question_label.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            question_label.Location = new Point(351, 78);
+            question_label.Location = new Point(305, 78);
             question_label.Name = "question_label";
             question_label.Size = new Size(52, 25);
             question_label.TabIndex = 3;
@@ -99,6 +100,7 @@
             restart_button.Text = "Resatrt";
             restart_button.UseVisualStyleBackColor = true;
             restart_button.Click += restart_button_Click_1;
+            restart_button.MouseMove += restart_button_MouseMove;
             // 
             // result_label
             // 
@@ -134,7 +136,6 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
-            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

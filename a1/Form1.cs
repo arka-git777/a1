@@ -1,5 +1,6 @@
-﻿using System.Linq;
-
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
 namespace a1
 {
     public partial class Form1 : Form
@@ -15,6 +16,7 @@ namespace a1
         {
             InitializeComponent();
             LoadQuestion();
+
         }
 
         private void LoadQuestion()
@@ -100,12 +102,51 @@ namespace a1
             LoadQuestion();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    var result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //    if (result == DialogResult.No)
+        //    {
+        //        e.Cancel = true;
+        //    }
+        //}
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
+
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
+        //private void button3_MouseHover(object sender, EventArgs e)
+        //{
+        //    Random random = new Random();
+        //    int newX = random.Next(0, this.ClientSize.Width - button3.Width);
+        //    int newY = random.Next(0, this.ClientSize.Height - button3.Height);
+
+        //    button3.Location = new Point(newX, newY);
+        //}
+
+        private void restart_button_MouseMove(object sender, MouseEventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
+            if (e.Button == MouseButtons.Right)
             {
-                e.Cancel = true;
+                restart_button.Location = new Point(
+                    Cursor.Position.X - restart_button.Parent.PointToScreen(Point.Empty).X - restart_button.Width / 2,
+                    Cursor.Position.Y - restart_button.Parent.PointToScreen(Point.Empty).Y - restart_button.Height / 2
+                );
+            }
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                label1.Location = new Point(
+                    Cursor.Position.X - label1.Parent.PointToScreen(Point.Empty).X - label1.Width / 2,
+                    Cursor.Position.Y - label1.Parent.PointToScreen(Point.Empty).Y - label1.Height / 2
+                );
             }
         }
     }
