@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             label1 = new Label();
             answer_box = new TextBox();
@@ -36,6 +37,14 @@
             restart_button = new Button();
             result_label = new Label();
             total_label = new Label();
+            hScrollBar1 = new HScrollBar();
+            vScrollBar1 = new VScrollBar();
+            label2 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            btnAdd = new Button();
+            label3 = new Label();
+            toolTip1 = new ToolTip(components);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -58,7 +67,6 @@
             label1.Size = new Size(166, 22);
             label1.TabIndex = 1;
             label1.Text = "Enter your asnwer:";
-            label1.Click += label1_Click;
             label1.MouseMove += label1_MouseMove;
             // 
             // answer_box
@@ -121,11 +129,75 @@
             total_label.TabIndex = 8;
             total_label.Text = "Total answers: 0";
             // 
+            // hScrollBar1
+            // 
+            hScrollBar1.Dock = DockStyle.Bottom;
+            hScrollBar1.LargeChange = 100;
+            hScrollBar1.Location = new Point(0, 795);
+            hScrollBar1.Maximum = 1000;
+            hScrollBar1.Name = "hScrollBar1";
+            hScrollBar1.Size = new Size(800, 17);
+            hScrollBar1.TabIndex = 9;
+            hScrollBar1.Scroll += hScrollBar1_Scroll;
+            // 
+            // vScrollBar1
+            // 
+            vScrollBar1.Dock = DockStyle.Right;
+            vScrollBar1.LargeChange = 100;
+            vScrollBar1.Location = new Point(783, 0);
+            vScrollBar1.Maximum = 1000;
+            vScrollBar1.Name = "vScrollBar1";
+            vScrollBar1.Size = new Size(17, 795);
+            vScrollBar1.TabIndex = 10;
+            vScrollBar1.Scroll += vScrollBar1_Scroll;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(194, 518);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 21);
+            label2.TabIndex = 11;
+            label2.Text = "Choose quantity";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(194, 542);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(129, 23);
+            numericUpDown1.TabIndex = 12;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(329, 542);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 13;
+            toolTip1.SetToolTip(btnAdd, "Press to see how much items did you add");
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(195, 595);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 25);
+            label3.TabIndex = 15;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 812);
+            Controls.Add(label3);
+            Controls.Add(btnAdd);
+            Controls.Add(numericUpDown1);
+            Controls.Add(label2);
+            Controls.Add(vScrollBar1);
+            Controls.Add(hScrollBar1);
             Controls.Add(total_label);
             Controls.Add(result_label);
             Controls.Add(restart_button);
@@ -136,7 +208,9 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
+            toolTip1.SetToolTip(this, "Press to see how much item did you add");
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,5 +225,12 @@
         private Button restart_button;
         private Label result_label;
         private Label total_label;
+        private HScrollBar hScrollBar1;
+        private VScrollBar vScrollBar1;
+        private Label label2;
+        private NumericUpDown numericUpDown1;
+        private Button btnAdd;
+        private Label label3;
+        private ToolTip toolTip1;
     }
 }

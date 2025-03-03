@@ -16,7 +16,6 @@ namespace a1
         {
             InitializeComponent();
             LoadQuestion();
-
         }
 
         private void LoadQuestion()
@@ -45,15 +44,6 @@ namespace a1
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -149,5 +139,37 @@ namespace a1
                 );
             }
         }
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+            question_label.Location = new Point(question_label.Location.X, vScrollBar1.Value);
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            question_label.Location = new Point(hScrollBar1.Value, question_label.Location.Y);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            label3.Text = $"You have add {numericUpDown1.Value} item(s)";
+            if (numericUpDown1.Value >= 8 && numericUpDown1.Value <= 48)
+                label3.Size = new Size((int)numericUpDown1.Value, (int)numericUpDown1.Value);
+            else
+                MessageBox.Show("Cannot change size");
+        }
     }
 }
+
+
+/*
+ private void vScrollBar1_ValueChanged(object sender, EventArgs e)
+{
+	label5.Text = vScrollBar1.Value.ToString();
+}
+ 
+private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+{
+	label4.Text = hScrollBar1.Value.ToString();
+}
+ */
